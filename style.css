@@ -89,7 +89,7 @@ header h3{
 .home-img {
     width: 100%; /* Full width */
     height: 500px; /* Set a fixed height or use any value that fits your design */
-    background-image: url('home.png'); /* Set your image as the background */
+    background-image: url('home\ .png'); /* Set your image as the background */
     background-size: cover; /* Cover the entire div */
     background-position: center; /* Center the image */
     position: relative; /* Make sure the text can be positioned on top */
