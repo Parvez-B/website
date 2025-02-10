@@ -1,0 +1,289 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Aptitude MCA1</title>
+    <link rel="icon" href="img/logo.png" type="image/x-icon">
+    
+    <!-- Favicon in PNG format (optional, for wider compatibility) -->
+    <link rel="icon" href="img/logo.png" type="image/png">
+    
+    <!-- Apple Touch Icon (for iOS) -->
+    <link rel="apple-touch-icon" sizes="180x180" href="img/logo.png">
+    
+    <!-- Favicon for various sizes (optional) -->
+    <link rel="icon" sizes="32x32" href="img/logo.png">
+    <link rel="icon" sizes="16x16" href="img/logo.png">
+    <style>
+      /* General body styling */
+      body {
+        font-family: Arial, sans-serif;
+        background-color: #f4f4f4;
+        margin: 0;
+        padding: 0;
+        height: 100vh;
+        display: flex;
+        flex-direction: column;
+        overflow-x: hidden; /* Prevent horizontal scroll */
+      }
+
+      /* Fixed Menu bar styling */
+      .navbar {
+        background-color: rgb(1, 18, 116);
+        color: white;
+        padding: 15px;
+        text-align: center;
+        position: fixed;
+        top: 0;
+        width: 100%;
+        z-index: 10; /* Make sure the menu stays above other elements */
+        display: flex;
+        justify-content: space-between; /* Space out the elements */
+        align-items: center;
+        padding: 10px 20px;
+      }
+
+      /* Logo styling (left corner) */
+      .navbar .logo {
+        height: 70px; /* Adjust logo size */
+        margin-left: 10px;
+        padding: 0px; /* Add some margin from the left */
+      }
+
+      /* Timer styling (right corner) */
+      .navbar .timer {
+        font-size: 1.5em;
+        font-weight: bold;
+        color: #e74c3c;
+      }
+
+      /* Logout button 3D styling */
+      .logout-button {
+        padding: 8px 15px;
+        font-size: 14px;
+        background-color: #fcfcfc;
+        border: none;
+        border-radius: 5px;
+        color: #007bff; 
+        cursor: pointer;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+        transition: all 0.3s ease;
+        margin-left: 5px;
+        margin-right: 50px;
+      }
+
+      .logout-button:hover {
+        transform: translateY(-4px);
+        box-shadow: 0 8px 16px rgba(0, 0, 0, 0.4);
+      }
+
+      .logout-button:active {
+        transform: translateY(2px);
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+      }
+
+      /* Form container styling */
+      .container {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        margin-top: 80px; /* Space for the menu */
+        padding: 0 20px;
+      }
+
+      iframe {
+        border: none;
+        width: 100%;
+        height: 600px; /* Make iframe responsive */
+        max-width: 640px;
+        margin-top: 20px;
+      }
+
+      /* Warning message styling */
+      .warning-message {
+        background-color: #9a0101;
+        color: rgb(0, 0, 0);
+        font-weight: bold;
+        padding: 10px;
+        margin: 20px;
+        border-radius: 5px;
+        display: none; /* Hide by default */
+        position: fixed;
+        top: 10px;
+        left: 50%;
+        transform: translateX(-50%);
+        z-index: 100;
+      }
+
+      /* Additional styles for readability */
+      h1 {
+        color: #333;
+      }
+
+      p {
+        font-size: 18px;
+        color: #555;
+      }
+
+      /* Media queries for responsiveness */
+      @media (max-width: 768px) {
+        .navbar {
+          flex-direction: column; /* Stack items vertically */
+          text-align: left;
+          padding: 10px;
+        }
+
+        .navbar .logo {
+          height: 40px; /* Make logo smaller on mobile */
+        }
+
+        .navbar .timer,
+        .navbar .logout-button {
+          font-size: 1.2em;
+        }
+
+        .container {
+          margin-top: 120px; /* Adjust for navbar height */
+        }
+
+        iframe {
+          height: 400px; /* Reduce iframe height on smaller screens */
+        }
+
+        .logout-button {
+          padding: 6px 12px;
+          font-size: 12px;
+        }
+      }
+
+      @media (max-width: 480px) {
+        .navbar .logo {
+          height: 30px; /* Further reduce logo size on small screens */
+        }
+
+        .navbar .timer {
+          font-size: 1.1em;
+        }
+
+        .logout-button {
+          font-size: 10px;
+          padding: 5px 10px;
+        }
+
+        iframe {
+          height: 300px; /* Further reduce iframe height on very small screens */
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <!-- Navigation bar -->
+    <div class="navbar">
+      <!-- Logo on the left -->
+      <img src="img/logo.png" alt="Logo" class="logo" />
+
+      <!-- <h1>Aptitude</h1> -->
+
+      <!-- Timer and Logout button on the right -->
+      <div>
+        <span class="timer" id="timer">40:00</span>
+        <button class="logout-button" onclick="logout()">Logout</button>
+      </div>
+    </div>
+
+    <!-- Form container -->
+    <div class="container">
+      <h1 style="margin-top: 80px;">Aptitude Form</h1>
+      <p>Please fill out the form below. You have 40 minutes to complete it.</p>
+      <p id="msg"></p>
+
+
+
+       <!------------ Change this link ------------------------->
+
+
+       
+      <iframe
+        src="https://docs.google.com/forms/d/e/1FAIpQLSdb8FarbDTvNJRgCSIC4C5PkNTj2I2Fn5Hrak755B9TmXfNtg/viewform?embedded=true"
+        width="640"
+        height="14357"
+        frameborder="0"
+        marginheight="0"
+        marginwidth="0"
+        >Loading…</iframe>
+
+
+
+         <!------------ Change this link ------------------------->
+
+    </div>
+
+    <!-- Warning message -->
+    <div class="warning-message" id="warningMessage">
+      You have switched away from the form. It may cause you to be logged out.
+    </div>
+
+    <script>
+      let timeLeft = 2400; // 40 minutes
+      const timerElement = document.getElementById("timer");
+      const warningMessage = document.getElementById("warningMessage");
+      let visibilityCount = 0;
+
+      // Function to update the timer display
+      function updateTimer() {
+        const minutes = Math.floor(timeLeft / 60);
+        const seconds = timeLeft % 60;
+        timerElement.textContent = `${String(minutes).padStart(
+          2,
+          "0"
+        )}:${String(seconds).padStart(2, "0")}`;
+      }
+
+      // Countdown timer
+      const countdownInterval = setInterval(() => {
+        timeLeft--;
+        updateTimer();
+
+        if (timeLeft <= 0) {
+          clearInterval(countdownInterval);
+          alert("Time is up! Submit the form.");
+        }
+      }, 1000);
+
+      // Function to handle visibility change
+      document.addEventListener("visibilitychange", () => {
+        if (document.visibilityState === "hidden") {
+          visibilityCount++;
+          warningMessage.style.display = "block";
+        } else {
+          warningMessage.style.display = "block";
+        }
+        // If the user has switched away from the tab twice, log out
+        if (visibilityCount >= 2) {
+          window.location.href = "index.html";
+        }
+      });
+
+      // function logout() {
+      //   alert("You have been logged out due to inactivity");
+      //   window.location.href = "login.html";
+      // }
+
+      function logout() {
+    // Display a confirmation dialog with "OK" and "Cancel" options
+    const userConfirmed = confirm("You have been logged out due to inactivity. Do you want to log out?");
+
+    if (userConfirmed) {
+        // If the user clicks "OK", redirect to the login page
+        window.location.href = "index.html";
+    } else {
+        // If the user clicks "Cancel", simply return without any action
+        console.log("User canceled the logout.");
+    }
+}
+
+    </script>
+  </body>
+</html>
